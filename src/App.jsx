@@ -4,6 +4,7 @@ import "./App.css"; // Import custom CSS file
 const App = () => {
   const [textFields, setTextFields] = useState([""]); // Start with one text field
   const [textSubtitle, setTextSubField] = useState(""); // Start with one text field
+  const [textSlideFontSize, setTextSlideFontSize] = useState(30); // Start with one text field
   const [copySuccess, setCopySuccess] = useState(false); // State for copy button feedback
 
   // Function to add a new text field
@@ -26,7 +27,10 @@ const App = () => {
 
   // Function to generate the fullText JavaScript array
   const generateArray = () => {
-    const filteredText = textFields.filter((text) => text.trim() !== "");
+    const filteredText = textFields
+      .map((text) => text.replace(/\n+/g, " "))
+      .map((text) => text.replace(/"/g, '\\"'))
+      .filter((text) => text.trim() !== "");
     return `function createSlidesAndExportPDF() {
   var presentation = SlidesApp.create("${new Date(Date.now()).toUTCString()}");
   var slides = presentation.getSlides();
@@ -69,7 +73,7 @@ const App = () => {
     var bodyShape = slide.getShapes()[1].getText();
     bodyShape.setText(index > 0 ? text : "");
     if(index > 0) {
-      bodyShape.getTextStyle().setFontSize(44).setBold(true);
+      bodyShape.getTextStyle().setFontSize(${textSlideFontSize}).setBold(true);
       bodyShape.getTextStyle().setForegroundColor("#000000");
       bodyShape.getParagraphStyle().setTextDirection(SlidesApp.TextDirection.RIGHT_TO_LEFT);
       bodyShape.getParagraphStyle().setParagraphAlignment(SlidesApp.ParagraphAlignment.START);
@@ -95,6 +99,13 @@ const App = () => {
         <h2>G Slides Generator</h2>
 
         <div className="text-fields">
+          <input
+            className="input"
+            placeholder="Text Slide Font Size"
+            value={textSlideFontSize}
+            onChange={(e) => setTextSlideFontSize(e.target.value)}
+            type="number"
+          />
           <input
             className="input"
             placeholder="Add pager text here..."
