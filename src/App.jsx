@@ -33,7 +33,7 @@ const App = () => {
       ...items,
       {
         text: "",
-        title: "",
+        title: items.at(-1).title,
         isBold: items.at(-1).isBold,
         color: items.at(-1).color,
         isCentered: items.at(-1).isCentered,
