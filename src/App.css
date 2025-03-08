@@ -4,11 +4,11 @@ body {
   margin: 0;
   padding: 0;
   transition: background-color 0.3s, color 0.3s;
+  background-color: #121212;
 }
 
 /* App Container */
 .app-container {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,25 +27,14 @@ body {
   border: 1px solid #333;
 }
 
-/* Light Mode Styles */
-.light-mode {
-  background-color: #f5f5f5;
-  color: black;
-}
-
-.light-mode .content-box {
-  background-color: white;
-  border: 1px solid #ccc;
-}
-
 /* Content Box */
 .content-box {
-  max-width: 600px;
   width: 100%;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, border-color 0.3s;
+  max-width: 1200px;
 }
 
 /* Buttons */
@@ -80,10 +69,12 @@ button {
 }
 
 .remove-button {
-  background-color: #dc3545;
+  background-color: #2f0005;
   color: white;
   padding: 5px 10px;
   margin-left: 10px;
+  width: 100px;
+  height: 80px;
 }
 
 .remove-button:hover {
@@ -96,6 +87,17 @@ button {
   align-items: center;
 }
 
+.input {
+  width: 100%;
+  height: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: white;
+  resize: vertical;
+  margin-bottom: 20px;
+}
 .text-area {
   width: 100%;
   height: 80px;
@@ -121,6 +123,7 @@ button {
   border-radius: 5px;
   white-space: pre-wrap;
   font-family: "Courier New", monospace;
+  width: fit-content;
 }
 
 .light-mode .code-box {
