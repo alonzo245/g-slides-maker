@@ -1,121 +1,95 @@
-/* Default Dark Theme */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s, color 0.3s;
-  background-color: #121212;
-}
-
-/* App Container */
-.app-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Dark Mode Styles */
-.dark-mode {
   background-color: #121212;
   color: white;
 }
 
-.dark-mode .content-box {
-  background-color: #1e1e1e;
-  border: 1px solid #333;
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* Content Box */
 .content-box {
   width: 100%;
   padding: 20px;
+  background: #1e1e1e;
+  border: 1px solid #333;
   border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, border-color 0.3s;
-  max-width: 1200px;
+}
+
+/* Text Field Container */
+.text-field-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Text Area */
+.text-area {
+  flex: 2;
+  height: 60px;
+  padding: 10px;
+  background: #222;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 5px;
+  resize: vertical;
+  width: 100%;
+}
+
+.options {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Input Labels */
+label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 /* Buttons */
 button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 8px 12px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.2s;
-}
-
-.toggle-button {
-  background-color: #007bff;
-  color: white;
-}
-
-.toggle-button:hover {
-  background-color: #0056b3;
 }
 
 .add-button {
-  background-color: #28a745;
+  background: #28a745;
   color: white;
 }
 
 .add-button:hover {
-  background-color: #218838;
+  background: #218838;
 }
 
 .remove-button {
-  background-color: #2f0005;
   color: white;
-  padding: 5px 10px;
-  margin-left: 10px;
-  width: 100px;
-  height: 80px;
 }
 
 .remove-button:hover {
-  background-color: #c82333;
+  background: #c82333;
 }
 
-/* Text Fields */
-.text-field-container {
-  display: flex;
-  align-items: center;
-}
-
-.input {
-  width: 100%;
-  height: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #444;
-  background-color: #222;
-  color: white;
-  resize: vertical;
-  margin-bottom: 20px;
-}
-.text-area {
-  width: 100%;
-  height: 80px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #444;
-  background-color: #222;
-  color: white;
-  resize: vertical;
-}
-
-.light-mode .text-area {
-  background-color: white;
-  color: black;
-  border: 1px solid #ccc;
-}
-
-/* Code Display */
+/* Code Box */
 .code-box {
   background: #333;
   color: #0f0;
@@ -123,10 +97,5 @@ button {
   border-radius: 5px;
   white-space: pre-wrap;
   font-family: "Courier New", monospace;
-  width: fit-content;
-}
-
-.light-mode .code-box {
-  background: #f4f4f4;
-  color: black;
+  overflow-x: scroll;
 }
