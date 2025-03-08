@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/g-slides-maker/static/css/main.9dcf4b73.css",
+    "main.js": "/g-slides-maker/static/js/main.bdf9cea4.js",
+    "index.html": "/g-slides-maker/index.html",
+    "main.9dcf4b73.css.map": "/g-slides-maker/static/css/main.9dcf4b73.css.map",
+    "main.bdf9cea4.js.map": "/g-slides-maker/static/js/main.bdf9cea4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9dcf4b73.css",
+    "static/js/main.bdf9cea4.js"
+  ]
+}
